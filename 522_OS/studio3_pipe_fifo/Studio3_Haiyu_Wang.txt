@@ -1,0 +1,74 @@
+Studio 3 Linuxpipes and FIFOs
+Haiyu Wang
+
+Pipe:
+
+pi@raspberrypi-why:~/whyprogram $ ./pipe
+Usage: ./pipe <string>
+pi@raspberrypi-why:~/whyprogram $ ./pipe 123
+123
+pi@raspberrypi-why:~/whyprogram $ ./pipe Hello
+Hello
+pi@raspberrypi-why:~/whyprogram $ ./pipe "Hello World"
+Hello World
+
+
+Read FIFO:
+
+Inputs:
+pi@raspberrypi-why:~/whyprogram $ echo 123 > myfifo
+pi@raspberrypi-why:~/whyprogram $ echo Hello > myfifo
+pi@raspberrypi-why:~/whyprogram $ cat  Hello.c > myfifo
+
+Outputs:
+pi@raspberrypi-why:~/whyprogram $ ./readfifo myfifo
+123
+Hello
+#include <stdio.h>
+
+int main(int argc,char *argv[])
+{
+    printf("Hello\n");
+
+}
+
+After modification:
+
+Inputs:
+pi@raspberrypi-why:~/whyprogram $ echo 123 > myfifo
+pi@raspberrypi-why:~/whyprogram $ echo 12 > myfifo
+pi@raspberrypi-why:~/whyprogram $ echo 998 > myfifo
+
+Outputs:
+pi@raspberrypi-why:~/whyprogram $ ./read myfifo
+123
+246
+12
+24
+998
+1996
+
+Write FIFO:
+
+Inputs:
+pi@raspberrypi-why:~/whyprogram $ ./weven
+Usage: ./weven <string> <even int>
+pi@raspberrypi-why:~/whyprogram $ ./weven myfifo 12
+pi@raspberrypi-why:~/whyprogram $ ./weven myfifo 13
+Not an Even Integer
+pi@raspberrypi-why:~/whyprogram $ ./wodd
+Usage: ./wodd <string> <odd int>
+pi@raspberrypi-why:~/whyprogram $ ./wodd myfifo 12
+Not an Odd Integer
+pi@raspberrypi-why:~/whyprogram $ ./wodd myfifo 13
+
+Outputs:
+pi@raspberrypi-why:~/whyprogram $ ./readfifo myfifo
+12
+13
+
+As it is shown in the results, when I input odd numbers through weven or even 
+numbers through wodd, they will show error information and not write the certain 
+numbers into FIFO. Thus, my programs work correctly
+
+

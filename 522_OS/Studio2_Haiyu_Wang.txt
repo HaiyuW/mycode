@@ -1,0 +1,19 @@
+Studio 2 Raspberry Pi 3 Setup
+Haiyu Wang
+
+The Desktop Background: 
+It is a picture of an endless freeway, beautiful sunlight, blue sky, white cloud and yellow grass alongside the road, which is a beautiful scenery。
+
+Change Password:
+(1) contains at least one lowercase alphabetic character (yes)
+(2) contains at least one uppercase character (yes)
+(3) contains at least one numerical character (yes)
+(4) contains at least one non-numeric, non-alphabetic character (yes)
+(5) is at least 8 characters long (yes)
+
+IP Address:
+My IP address is 172.16.122.120
+Note: As I did this this studio at home and I didn’t connect to wustl-2.0, my IP address maybe a little different from that when connecting to wustl-2.0
+
+Kernel Information:
+Linux raspberrypi-why 4.19.66-WHY #1 SMP PREEMPT Sun Sep 1 16:12:56 CDT 2019 armv71 GNU/Linux
