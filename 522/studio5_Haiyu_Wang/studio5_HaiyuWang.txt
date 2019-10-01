@@ -1,0 +1,88 @@
+Studio 5 Linux Sockets
+Haiyu Wang
+
+1. Members
+Haiyu Wang
+
+2. Server Code
+Please see the localserver.c
+
+
+3. Results as following:
+pi@raspberrypi-why:~/studio5 $ ./localserver
+New Connection Established
+hello
+world
+123
+socket
+
+4. Results as following
+input:
+pi@raspberrypi-why:~/studio5 $ ./localclient
+hello
+world
+123
+socket
+^C
+pi@raspberrypi-why:~/studio5 $ ./localclient
+new connection
+accept
+right
+^C
+pi@raspberrypi-why:~/studio5 $ ./localclient
+test
+success
+^C
+pi@raspberrypi-why:~/studio5 $
+
+output:
+pi@raspberrypi-why:~/studio5 $ ./localserver
+New Connection Established
+hello
+world
+123
+socket
+New Connection Established
+new connection
+accept
+right
+New Connection Established
+test
+success
+
+5. Results as following:
+input:
+pi@raspberrypi-why:~/studio5 $ ./localclient
+test 
+hello
+123
+quit
+
+output:
+pi@raspberrypi-why:~/studio5 $ ./localserver
+New Connection Established
+test
+hello
+123
+pi@raspberrypi-why:~/studio5 $
+
+6. Results as following:
+input:
+pi@raspberrypi-why:~/cse522s/studio5 $ ./netclient
+hello
+right
+world
+123
+^C
+pi@raspberrypi-why:~/cse522s/studio5 $ ./netclient
+quit
+
+output:
+[haiyu.wang@shell ~]$ ./netserver
+New Connection Established
+hello
+right
+world
+123
+New Connection Established
+[haiyu.wang@shell ~]$
