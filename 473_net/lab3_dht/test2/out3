@@ -1,0 +1,535 @@
+put foo bar
+/192.168.4.2:34986 sending packet to /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:put
+key:foo
+tag:104780794
+value:bar
+ttl:100
+
+/192.168.4.2:34986 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:104780794
+value:bar
+ttl:98
+
+put who hah
+/192.168.4.2:55223 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:put
+key:who
+tag:1340853257
+value:hah
+ttl:100
+
+/192.168.4.2:55223 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:who
+tag:1340853257
+value:hah
+ttl:95
+
+get foo
+/192.168.4.2:41232 sending packet to /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:get
+key:foo
+tag:1324295118
+ttl:100
+
+/192.168.4.2:41232 received packet from /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:1324295118
+value:bar
+ttl:96
+
+get who
+/192.168.4.2:56693 sending packet to /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:get
+key:who
+tag:296017435
+ttl:100
+
+/192.168.4.2:56693 received packet from /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:success
+key:who
+tag:296017435
+value:hah
+ttl:95
+
+get goodbye
+/192.168.4.2:54076 sending packet to /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:get
+key:goodbye
+tag:1670515857
+ttl:100
+
+/192.168.4.2:54076 received packet from /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:no match
+key:goodbye
+tag:1670515857
+ttl:96
+
+get
+/192.168.4.2:59320 sending packet to /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:get
+tag:221893307
+ttl:100
+
+/192.168.4.2:59320 received packet from /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:failure
+tag:221893307
+reason:gets and puts require key and tag
+ttl:98
+
+get bar
+/192.168.4.2:40329 sending packet to /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:get
+key:bar
+tag:1134224176
+ttl:100
+
+/192.168.4.2:40329 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:no match
+key:bar
+tag:1134224176
+ttl:96
+
+put foo toast is tasty
+/192.168.4.2:55945 sending packet to /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:put
+key:foo
+tag:1154234811
+value:toast is tasty
+ttl:100
+
+/192.168.4.2:55945 received packet from /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:1154234811
+value:toast is tasty
+ttl:96
+
+get foo
+/192.168.4.2:43825 sending packet to /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:get
+key:foo
+tag:1009540270
+ttl:100
+
+/192.168.4.2:43825 received packet from /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:1009540270
+value:toast is tasty
+ttl:96
+
+put flim flam
+/192.168.4.2:37517 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:put
+key:flim
+tag:1331583441
+value:flam
+ttl:100
+
+/192.168.4.2:37517 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:flim
+tag:1331583441
+value:flam
+ttl:96
+
+put flip flop
+/192.168.4.2:59784 sending packet to /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:put
+key:flip
+tag:766003038
+value:flop
+ttl:100
+
+/192.168.4.2:59784 received packet from /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:success
+key:flip
+tag:766003038
+value:flop
+ttl:96
+
+put slim jim
+/192.168.4.2:51320 sending packet to /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:put
+key:slim
+tag:738281916
+value:jim
+ttl:100
+
+/192.168.4.2:51320 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:success
+key:slim
+tag:738281916
+value:jim
+ttl:96
+
+put abra cadabra
+/192.168.4.2:37122 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:put
+key:abra
+tag:636564491
+value:cadabra
+ttl:100
+
+/192.168.4.2:37122 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:abra
+tag:636564491
+value:cadabra
+ttl:94
+
+put chocolate fudge
+/192.168.4.2:40400 sending packet to /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:put
+key:chocolate
+tag:988371907
+value:fudge
+ttl:100
+
+/192.168.4.2:40400 received packet from /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:success
+key:chocolate
+tag:988371907
+value:fudge
+ttl:96
+
+put dungeons dragons
+/192.168.4.2:37578 sending packet to /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:put
+key:dungeons
+tag:101188647
+value:dragons
+ttl:100
+
+/192.168.4.2:37578 received packet from /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:success
+key:dungeons
+tag:101188647
+value:dragons
+ttl:96
+
+put political follies
+/192.168.4.2:49984 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:put
+key:political
+tag:1888406851
+value:follies
+ttl:100
+
+/192.168.4.2:49984 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:political
+tag:1888406851
+value:follies
+ttl:95
+
+put fantasy football
+/192.168.4.2:34671 sending packet to /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:put
+key:fantasy
+tag:842149
+value:football
+ttl:100
+
+/192.168.4.2:34671 received packet from /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:success
+key:fantasy
+tag:842149
+value:football
+ttl:98
+
+get flim
+/192.168.4.2:55988 sending packet to /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:get
+key:flim
+tag:569205501
+ttl:100
+
+/192.168.4.2:55988 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:success
+key:flim
+tag:569205501
+value:flam
+ttl:96
+
+get flip
+/192.168.4.2:41030 sending packet to /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:get
+key:flip
+tag:79789882
+ttl:100
+
+/192.168.4.2:41030 received packet from /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:success
+key:flip
+tag:79789882
+value:flop
+ttl:96
+
+get slim
+/192.168.4.2:37737 sending packet to /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:get
+key:slim
+tag:2007306097
+ttl:100
+
+/192.168.4.2:37737 received packet from /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:success
+key:slim
+tag:2007306097
+value:jim
+ttl:96
+
+get abra
+/192.168.4.2:55674 sending packet to /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:get
+key:abra
+tag:275868583
+ttl:100
+
+/192.168.4.2:55674 received packet from /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:success
+key:abra
+tag:275868583
+value:cadabra
+ttl:98
+
+get chocolate
+/192.168.4.2:43395 sending packet to /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:get
+key:chocolate
+tag:1784172660
+ttl:100
+
+/192.168.4.2:43395 received packet from /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:success
+key:chocolate
+tag:1784172660
+value:fudge
+ttl:96
+
+get dungeons
+/192.168.4.2:36834 sending packet to /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:get
+key:dungeons
+tag:160786115
+ttl:100
+
+/192.168.4.2:36834 received packet from /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:success
+key:dungeons
+tag:160786115
+value:dragons
+ttl:98
+
+get political
+/192.168.4.2:45916 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:get
+key:political
+tag:411456854
+ttl:100
+
+/192.168.4.2:45916 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:political
+tag:411456854
+value:follies
+ttl:96
+
+get fantasy
+/192.168.4.2:57361 sending packet to /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:get
+key:fantasy
+tag:865119731
+ttl:100
+
+/192.168.4.2:57361 received packet from /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:success
+key:fantasy
+tag:865119731
+value:football
+ttl:95
+
+get flim
+/192.168.4.2:38837 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:get
+key:flim
+tag:1078195739
+ttl:100
+
+/192.168.4.2:38837 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:flim
+tag:1078195739
+value:flam
+ttl:96
+
+get flip
+/192.168.4.2:38307 sending packet to /192.168.6.1:40459
+CSE473 DHTPv0.1
+type:get
+key:flip
+tag:1950553509
+ttl:100
+
+/192.168.4.2:38307 received packet from /192.168.6.1:40459
+CSE473 DHTPv0.1
+type:success
+key:flip
+tag:1950553509
+value:flop
+ttl:98
+
+get slim
+/192.168.4.2:52129 sending packet to /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:get
+key:slim
+tag:751016132
+ttl:100
+
+/192.168.4.2:52129 received packet from /192.168.1.1:33270
+CSE473 DHTPv0.1
+type:success
+key:slim
+tag:751016132
+value:jim
+ttl:96
+
+get abra
+/192.168.4.2:40875 sending packet to /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:get
+key:abra
+tag:1916515068
+ttl:100
+
+/192.168.4.2:40875 received packet from /192.168.5.2:40444
+CSE473 DHTPv0.1
+type:success
+key:abra
+tag:1916515068
+value:cadabra
+ttl:98
+
+get chocolate
+/192.168.4.2:48016 sending packet to /192.168.2.3:47000
+CSE473 DHTPv0.1
+type:get
+key:chocolate
+tag:77982438
+ttl:100
+
+/192.168.4.2:48016 received packet from /192.168.2.3:47000
+CSE473 DHTPv0.1
+type:success
+key:chocolate
+tag:77982438
+value:fudge
+ttl:95
+
+get dungeons
+/192.168.4.2:38278 sending packet to /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:get
+key:dungeons
+tag:1023418034
+ttl:100
+
+/192.168.4.2:38278 received packet from /192.168.2.5:42888
+CSE473 DHTPv0.1
+type:success
+key:dungeons
+tag:1023418034
+value:dragons
+ttl:96
+
+get political
+/192.168.4.2:40118 sending packet to /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:get
+key:political
+tag:431546516
+ttl:100
+
+/192.168.4.2:40118 received packet from /192.168.2.4:36742
+CSE473 DHTPv0.1
+type:success
+key:political
+tag:431546516
+value:follies
+ttl:98
+
+get fantasy
+/192.168.4.2:40975 sending packet to /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:get
+key:fantasy
+tag:2127674336
+ttl:100
+
+/192.168.4.2:40975 received packet from /192.168.3.2:45271
+CSE473 DHTPv0.1
+type:success
+key:fantasy
+tag:2127674336
+value:football
+ttl:95
+

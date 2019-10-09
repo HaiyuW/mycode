@@ -1,0 +1,369 @@
+put foo bar
+/127.0.0.1:33434 sending packet to /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:put
+key:foo
+tag:740628586
+value:bar
+ttl:100
+
+/127.0.0.1:33434 received packet from /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:740628586
+value:bar
+ttl:98
+
+put who hah
+/127.0.0.1:54420 sending packet to /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:put
+key:who
+tag:854874571
+value:hah
+ttl:100
+
+/127.0.0.1:54420 received packet from /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:success
+key:who
+tag:854874571
+value:hah
+ttl:95
+
+put junk mail
+/127.0.0.1:58199 sending packet to /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:put
+key:junk
+tag:1549622867
+value:mail
+ttl:100
+
+/127.0.0.1:58199 received packet from /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:success
+key:junk
+tag:1549622867
+value:mail
+ttl:95
+
+put blue moose
+/127.0.0.1:52860 sending packet to /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:put
+key:blue
+tag:1791338256
+value:moose
+ttl:100
+
+/127.0.0.1:52860 received packet from /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:1791338256
+value:moose
+ttl:98
+
+get foo
+/127.0.0.1:38712 sending packet to /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:get
+key:foo
+tag:451413612
+ttl:100
+
+/127.0.0.1:38712 received packet from /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:451413612
+value:bar
+ttl:96
+
+get who
+/127.0.0.1:60274 sending packet to /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:get
+key:who
+tag:1492775709
+ttl:100
+
+/127.0.0.1:60274 received packet from /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:success
+key:who
+tag:1492775709
+value:hah
+ttl:96
+
+get goodbye
+/127.0.0.1:37723 sending packet to /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:get
+key:goodbye
+tag:1049085603
+ttl:100
+
+/127.0.0.1:37723 received packet from /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:no match
+key:goodbye
+tag:1049085603
+ttl:98
+
+get blue
+/127.0.0.1:45830 sending packet to /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:949922724
+ttl:100
+
+/127.0.0.1:45830 received packet from /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:949922724
+value:moose
+ttl:96
+
+get
+/127.0.0.1:48975 sending packet to /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:get
+tag:625416840
+ttl:100
+
+/127.0.0.1:48975 received packet from /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:failure
+tag:625416840
+reason:gets and puts require key and tag
+ttl:98
+
+get bar
+/127.0.0.1:34086 sending packet to /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:get
+key:bar
+tag:375097819
+ttl:100
+
+/127.0.0.1:34086 received packet from /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:no match
+key:bar
+tag:375097819
+ttl:95
+
+put foo toast is tasty
+/127.0.0.1:42631 sending packet to /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:put
+key:foo
+tag:1233833302
+value:toast is tasty
+ttl:100
+
+/127.0.0.1:42631 received packet from /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:1233833302
+value:toast is tasty
+ttl:96
+
+get foo
+/127.0.0.1:38494 sending packet to /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:get
+key:foo
+tag:1588629950
+ttl:100
+
+/127.0.0.1:38494 received packet from /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:1588629950
+value:toast is tasty
+ttl:98
+
+get blue
+/127.0.0.1:34402 sending packet to /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:1743463338
+ttl:100
+
+/127.0.0.1:34402 received packet from /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:1743463338
+value:moose
+ttl:96
+
+get blue
+/127.0.0.1:32843 sending packet to /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:237952558
+ttl:100
+
+/127.0.0.1:32843 received packet from /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:237952558
+value:moose
+ttl:98
+
+get blue
+/127.0.0.1:53063 sending packet to /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:2077092551
+ttl:100
+
+/127.0.0.1:53063 received packet from /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:2077092551
+value:moose
+ttl:98
+
+get blue
+/127.0.0.1:45238 sending packet to /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:1606520771
+ttl:100
+
+/127.0.0.1:45238 received packet from /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:1606520771
+value:moose
+ttl:96
+
+get blue
+/127.0.0.1:33008 sending packet to /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:2123989019
+ttl:100
+
+/127.0.0.1:33008 received packet from /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:2123989019
+value:moose
+ttl:98
+
+get blue
+/127.0.0.1:37260 sending packet to /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:278246961
+ttl:100
+
+/127.0.0.1:37260 received packet from /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:278246961
+value:moose
+ttl:98
+
+get blue
+/127.0.0.1:47973 sending packet to /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:1362223676
+ttl:100
+
+/127.0.0.1:47973 received packet from /127.0.0.1:52614
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:1362223676
+value:moose
+ttl:98
+
+get blue
+/127.0.0.1:55753 sending packet to /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:632288375
+ttl:100
+
+/127.0.0.1:55753 received packet from /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:632288375
+value:moose
+ttl:98
+
+get blue
+/127.0.0.1:47283 sending packet to /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:get
+key:blue
+tag:991082643
+ttl:100
+
+/127.0.0.1:47283 received packet from /127.0.0.1:37052
+CSE473 DHTPv0.1
+type:success
+key:blue
+tag:991082643
+value:moose
+ttl:98
+
+get foo
+/127.0.0.1:56255 sending packet to /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:get
+key:foo
+tag:705992160
+ttl:100
+
+/127.0.0.1:56255 received packet from /127.0.0.1:41370
+CSE473 DHTPv0.1
+type:success
+key:foo
+tag:705992160
+value:bar
+ttl:98
+
+get junk
+/127.0.0.1:54503 sending packet to /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:get
+key:junk
+tag:1728126695
+ttl:100
+
+/127.0.0.1:54503 received packet from /127.0.0.1:43999
+CSE473 DHTPv0.1
+type:success
+key:junk
+tag:1728126695
+value:mail
+ttl:98
+

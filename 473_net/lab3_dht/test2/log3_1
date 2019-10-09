@@ -1,0 +1,47 @@
+/192.168.6.1:40459 sending packet to /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:join
+tag:1282387890
+ttl:100
+
+/192.168.6.1:40459 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:success
+hashRange:268435456:536870911
+tag:1282387890
+succInfo:192.168.3.2:45271:536870912
+predInfo:192.168.7.1:57521:0
+ttl:99
+
+rteTbl=[(/192.168.3.2:45271,536870912)]
+/192.168.6.1:40459 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:transfer
+key:flip
+tag:684090766
+value:flop
+ttl:99
+
+/192.168.6.1:40459 received packet from /192.168.7.1:57521
+CSE473 DHTPv0.1
+type:transfer
+key:who
+tag:684090766
+value:hah
+ttl:99
+
+/192.168.6.1:40459 received packet from /192.168.4.2:38307
+CSE473 DHTPv0.1
+type:get
+key:flip
+tag:1950553509
+ttl:99
+
+/192.168.6.1:40459 sending packet to /192.168.4.2:38307
+CSE473 DHTPv0.1
+type:success
+key:flip
+tag:1950553509
+value:flop
+ttl:99
+
