@@ -1,0 +1,49 @@
+Studio 8 Observing Timing Events
+
+1.	Members
+Haiyu Wang, Siwei Cai, Shiqi Lian
+
+2.	Output
+[ 2785.790290] module initialized
+[ 2798.037102] timestamp 0 is 0
+[ 2798.037131] timestamp 1 is 0
+[ 2798.037143] module is unloaded
+
+3.	Output
+[ 6427.665201] module initialized
+[ 6435.645654] timestamp 0 is 6427622647791
+[ 6435.645691] timestamp 1 is 6427623012477
+[ 6435.645707] timestamp 2 is 6427623024612
+[ 6435.645722] time between 0 and 1 is 364686
+[ 6435.645737] time between 2 and 1 is 12135
+[ 6435.645749] module is unloaded
+
+The latency for issuing the thread creation request (0~1) is 364686 nanoseconds
+The latency for issuing the request to set the scheduling policy and priority (1~2) is 12135 nanoseconds
+
+4.	Output
+[ 1270.087795] module initialized
+[ 1271.134444] MyPrint
+[ 1278.470756] timestamp 0 is 1270073210326
+[ 1278.470786] timestamp 1 is 1270073429282
+[ 1278.470799] timestamp 2 is 1270073442667
+[ 1278.470812] timestamp 3 is 1271120034156
+[ 1278.470826] timestamp 4 is 1271120076343
+[ 1278.470839] timestamp 5 is 1271120099208
+[ 1278.470851] time between 0 and 4 is 1046866017
+[ 1278.470864] time between 3 and 5 is 65052
+[ 1278.470876] module is unloaded
+
+The latency from the thread creation request until the thread starts running (0~4) is 1046866017 nanoseconds ~ 1 second (equals to the time we set)
+
+The latency to wake up a sleeping thread (3~5) is 65052.
+
+5.	Code
+Please see the code in Thread_5.c 
+
+6.	Output
+[ 3289.147258] time is 521			-> last pre and first post
+[ 3289.147266] time is 30051713		-> last pre and second post
+[ 3289.147273] time is 36519632		-> last pre and third post
+[ 3289.147280] time is 44281156		-> last pre and forth post
+

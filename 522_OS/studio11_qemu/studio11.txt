@@ -1,0 +1,21 @@
+Studio 11 QEMU/KVM Virtual Machines
+
+1. Members
+Haiyu Wang, Siwei Cai, Shiqi Lian
+
+2.result
+Linux pi64 4.19.67-v8-174fcab91765-bis+ #2 SMP PREEMPT Tue Aug 27 13:29:20 GMT 2019 aarch64 GNU/Linux
+
+3. result
+Linux kvm-bionic 4.15.0-66-generic #75-Ubuntu SMP Tue Oct 1 05:25:33 UTC 2019 aarch64 aarch64 aarch64 GNU/Linux
+
+4. result
+real	1m13.155s
+user	0m0.007s
+sys	0m0.054s
+
+As the result shows, it takes about 1 minutes and 13 seconds to boot the VM.
+
+5. result
+When booting the VM, we waited about 10 minutes, but the QEMU console window didn't show anything, while the load of CPU was very high. We can infer that the VM was being booted but it could take a very time to boot it without the certain command.
+We can get the conclusion that KVM can accelerate the speed of booting the VM because KVM is based on the kernel while without KVM, the virtualizaion is based on hardware. Thus, KVM can reduced a large amount of codes to be executed when booting the VM, which means KVM can accelerate the process of booting the VM.
