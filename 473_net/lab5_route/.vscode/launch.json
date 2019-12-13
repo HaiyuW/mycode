@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TestRouter",
+            "request": "launch",
+            "mainClass": "TestRouter",
+            "args": "local/r2 .333 20 static debugggg >test2"
+        }
+    ]
+}
