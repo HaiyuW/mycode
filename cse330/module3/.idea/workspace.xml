@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e48536d1-30d8-4233-b345-fef78d802d86" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="why@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="why@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="why@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="wustl_module3: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ProjectId" id="1XgkiLqi0RR6koBEMSQmQCJe7CN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="login.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/module3/login.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="login.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://ec2-18-217-131-70.us-east-2.compute.amazonaws.com/~Ocean/module3/login.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.login.php" />
+        <item itemvalue="JavaScript Debug.login.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e48536d1-30d8-4233-b345-fef78d802d86" name="Default Changelist" comment="" />
+      <created>1581475250655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581475250655</updated>
+      <workItem from="1581475254571" duration="10660000" />
+      <workItem from="1581567078904" duration="75824000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="505" y="93" key="#Deployment" timestamp="1581736770448">
+      <screen x="0" y="23" width="1600" height="813" />
+    </state>
+    <state x="455" y="77" key="#Deployment/0.0.1440.900@0.0.1440.900" timestamp="1581717286450" />
+    <state x="505" y="93" key="#Deployment/0.23.1600.813/-1440.23.1440.877@0.23.1600.813" timestamp="1581736770448" />
+    <state x="505" y="93" key="#Deployment/0.23.1600.814/-1440.23.1440.877@0.23.1600.814" timestamp="1581735789814" />
+    <state x="505" y="93" key="#Deployment/0.23.1600.816/-1440.23.1440.877@0.23.1600.816" timestamp="1581477619823" />
+    <state x="505" y="93" key="#Deployment/0.23.1600.821/-1440.23.1440.877@0.23.1600.821" timestamp="1581567089606" />
+    <state x="505" y="93" key="#Options" timestamp="1581477305166">
+      <screen x="0" y="23" width="1600" height="816" />
+    </state>
+    <state x="505" y="93" key="#Options/0.23.1600.814/-1440.23.1440.877@0.23.1600.814" timestamp="1581476610769" />
+    <state x="505" y="93" key="#Options/0.23.1600.816/-1440.23.1440.877@0.23.1600.816" timestamp="1581477305166" />
+    <state x="596" y="23" width="617" height="814" key="#PHP" timestamp="1581475923184">
+      <screen x="0" y="23" width="1600" height="814" />
+    </state>
+    <state x="596" y="23" width="617" height="814" key="#PHP/0.23.1600.814/-1440.23.1440.877@0.23.1600.814" timestamp="1581475923184" />
+    <state x="183" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581807875169">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="183" y="55" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1581807875169" />
+    <state x="203" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1600.816/-1440.23.1440.877@0.23.1600.816" timestamp="1581477017354" />
+    <state x="278" y="52" key="SettingsEditor" timestamp="1581701642004">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="278" y="52" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581701642004" />
+    <state x="309" y="70" key="SettingsEditor/0.23.1600.813/-1440.23.1440.877@0.23.1600.813" timestamp="1581475722087" />
+    <state x="309" y="70" key="SettingsEditor/0.23.1600.814/-1440.23.1440.877@0.23.1600.814" timestamp="1581475959840" />
+    <state x="309" y="70" key="SettingsEditor/0.23.1600.816/-1440.23.1440.877@0.23.1600.816" timestamp="1581475261510" />
+    <state x="493" y="263" key="com.intellij.ide.util.TipDialog" timestamp="1581475255693">
+      <screen x="0" y="23" width="1600" height="816" />
+    </state>
+    <state x="493" y="263" key="com.intellij.ide.util.TipDialog/0.23.1600.816/-1440.23.1440.877@0.23.1600.816" timestamp="1581475255693" />
+    <state x="-1402" y="23" width="1364" height="877" key="dock-window-1" timestamp="1581906288084">
+      <screen x="-1440" y="0" width="1440" height="900" />
+    </state>
+    <state x="-1402" y="23" width="1364" height="877" key="dock-window-1/0.0.1600.900/-1440.0.1440.900@0.0.1600.900" timestamp="1581906288084" />
+    <state x="-1365" y="23" width="1365" height="877" key="dock-window-2" timestamp="1581916515589">
+      <screen x="-1440" y="23" width="1440" height="877" />
+    </state>
+    <state x="-1365" y="0" width="1365" height="900" key="dock-window-2/0.0.1600.900/-1440.0.1440.900@0.0.1600.900" timestamp="1581916510829" />
+    <state x="-1365" y="23" width="1365" height="877" key="dock-window-2/0.23.1600.817/-1440.23.1440.877@0.23.1600.817" timestamp="1581916515589" />
+    <state x="465" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1581696277521">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="465" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1600.900/-1440.0.1440.900@0.0.1600.900" timestamp="1581696277521" />
+  </component>
+</project>

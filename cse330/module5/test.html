@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Calendar</title>
+
+    <script src="scripts/functions.js"></script>
+</head>
+<body>
+<div class="container" id="root">
+    <div class="row">blank</div>
+    <div class="row" id="navigation-bar">
+        ---first row---
+    </div>
+    <div class="row" id="main-page">
+        <div class="col" id="date-view">
+            <div class="row">
+                <button id="prev_month_btn">previous month</button>
+                <p id="year_month">year:month</p>
+                <button id="next_month_btn">next month</button>
+            </div>
+            <div class="row" id="calendar" >
+                <div class="col"><p>Sun</p></div>
+                <div class="col"><p>Mon</p></div>
+                <div class="col"><p>Tue</p></div>
+                <div class="col"><p>Wed</p></div>
+                <div class="col"><p>Thu</p></div>
+                <div class="col"><p>Fri</p></div>
+                <div class="col"><p>Sat</p></div>
+            </div>
+        </div>
+        <div class="col" id="events-view">--- event ---</div>
+        <div class="col" id="groups-view">--- group ---</div>
+    </div>
+
+</div>
+<script defer src="scripts/handleLoad.js"></script>
+<script defer src="scripts/calendar.js"></script>
+</body>
+</html>
