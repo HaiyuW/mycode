@@ -1,0 +1,2 @@
+i='SimpleIndirectPredictor'
+$GEM5/build/ARM/gem5.opt --outdir=${i} ./hw4config.py --cpu-type="DerivO3CPU" --branch-pred=${i} --caches --l2cache --cmd="/project/linuxlab/gem5/test_progs/dibs/gotrackcsv_to_csv" 

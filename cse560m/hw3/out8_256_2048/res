@@ -1,0 +1,4 @@
+grep sim_seconds stats.txt
+grep issue stats.txt | grep rate
+grep idle stats.txt | grep cycle | grep rename
+grep overall_miss_rate stats.txt | grep total

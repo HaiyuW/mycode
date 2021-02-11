@@ -1,0 +1,10 @@
+for i in 4 8 16 32 64 128 256
+do
+    for j in 4 8 16 32 64 128 256
+    do
+        for k in 256 512 1024 2048 4096
+        do
+        $GEM5/build/ARM/gem5.opt --outdir=out${i}_${j}_${k} hw3config.py -c $GEM5/../test_progs/daxpy/daxpy_arm_big --cpu-type="DerivO3CPU" --caches --l2cache --num-phys-float-regs=$k --num-rob-entries=$i --num-iq-entries=$j
+        done
+    done
+done
