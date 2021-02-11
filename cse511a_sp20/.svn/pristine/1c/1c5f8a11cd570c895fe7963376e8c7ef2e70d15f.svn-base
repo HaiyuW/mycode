@@ -1,0 +1,381 @@
+# multiAgents.py
+# --------------
+# Licensing Information: Please do not distribute or publish solutions to this
+# project. You are free to use and extend these projects for educational
+# purposes. The Pacman AI projects were developed at UC Berkeley, primarily by
+# John DeNero (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
+# For more info, see http://inst.eecs.berkeley.edu/~cs188/sp09/pacman.html
+
+from util import manhattanDistance
+from game import Directions
+import random, util
+
+from game import Agent
+
+class ReflexAgent(Agent):
+    """
+      A reflex agent chooses an action at each choice point by examining
+      its alternatives via a state evaluation function.
+
+      The code below is provided as a guide.  You are welcome to change
+      it in any way you see fit, so long as you don't touch our method
+      headers.
+    """
+
+
+    def getAction(self, gameState):
+        """
+        You do not need to change this method, but you're welcome to.
+
+        getAction chooses among the best options according to the evaluation function.
+
+        Just like in the previous project, getAction takes a GameState and returns
+        some Directions.X for some X in the set {North, South, West, East, Stop}
+        """
+        # Collect legal moves and successor states
+        legalMoves = gameState.getLegalActions()
+
+        # Choose one of the best actions
+        scores = [self.evaluationFunction(gameState, action) for action in legalMoves]
+        bestScore = max(scores)
+        bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        chosenIndex = random.choice(bestIndices) # Pick randomly among the best
+
+        "Add more of your code here if you want to"
+
+        return legalMoves[chosenIndex]
+
+    def evaluationFunction(self, currentGameState, action):
+        """
+        Design a better evaluation function here.
+
+        The evaluation function takes in the current and proposed successor
+        GameStates (pacman.py) and returns a number, where higher numbers are better.
+
+        The code below extracts some useful information from the state, like the
+        remaining food (newFood) and Pacman position after moving (newPos).
+        newScaredTimes holds the number of moves that each ghost will remain
+        scared because of Pacman having eaten a power pellet.
+
+        Print out these variables to see what you're getting, then combine them
+        to create a masterful evaluation function.
+        """
+        # Useful information you can extract from a GameState (pacman.py)
+        successorGameState = currentGameState.generatePacmanSuccessor(action)
+        newPos = successorGameState.getPacmanPosition()
+        newFood = successorGameState.getFood()
+        newGhostStates = successorGameState.getGhostStates()
+        newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
+
+        "*** YOUR CODE HERE ***"
+        # Distance to the nearest food
+        minDistanceToFood = 100000
+        for food in newFood.asList():
+            minDistanceToFood = min(minDistanceToFood, manhattanDistance(newPos,food))
+
+        # Distance to the furthest ghost
+        maxDistanceToGhost = -100000
+        newGhostPositions = successorGameState.getGhostPositions()
+        for ghost in newGhostPositions:
+            if newScaredTimes[0] != 0:
+                maxDistanceToGhost = -1
+            else:
+                maxDistanceToGhost = max(minDistanceToFood, manhattanDistance(newPos,ghost))
+
+        return successorGameState.getScore() + 1.0/minDistanceToFood*1.0 - 1.0/maxDistanceToGhost
+
+def scoreEvaluationFunction(currentGameState):
+    """
+      This default evaluation function just returns the score of the state.
+      The score is the same one displayed in the Pacman GUI.
+
+      This evaluation function is meant for use with adversarial search agents
+      (not reflex agents).
+    """
+    return currentGameState.getScore()
+
+class MultiAgentSearchAgent(Agent):
+    """
+      This class provides some common elements to all of your
+      multi-agent searchers.  Any methods defined here will be available
+      to the MinimaxPacmanAgent, AlphaBetaPacmanAgent & ExpectimaxPacmanAgent.
+
+      You *do not* need to make any changes here, but you can if you want to
+      add functionality to all your adversarial search agents.  Please do not
+      remove anything, however.
+
+      Note: this is an abstract class: one that should not be instantiated.  It's
+      only partially specified, and designed to be extended.  Agent (game.py)
+      is another abstract class.
+    """
+
+    def __init__(self, evalFn = 'scoreEvaluationFunction', depth = '2'):
+        self.index = 0 # Pacman is always agent index 0
+        self.evaluationFunction = util.lookup(evalFn, globals())
+        self.depth = int(depth)
+
+class MinimaxAgent(MultiAgentSearchAgent):
+    """
+      Your minimax agent (question 2)
+    """
+
+    def getAction(self, gameState):
+        """
+          Returns the minimax action from the current gameState using self.depth
+          and self.evaluationFunction.
+
+          Here are some method calls that might be useful when implementing minimax.
+
+          gameState.getLegalActions(agentIndex):
+            Returns a list of legal actions for an agent
+            agentIndex=0 means Pacman, ghosts are >= 1
+
+          Directions.STOP:
+            The stop direction, which is always legal
+
+          gameState.generateSuccessor(agentIndex, action):
+            Returns the successor game state after an agent takes an action
+
+          gameState.getNumAgents():
+            Returns the total number of agents in the game
+        """
+        "*** YOUR CODE HERE ***"
+
+        return self.minimax(0, True, 0, gameState)[1]
+
+        util.raiseNotDefined()
+
+    def minimax(self, depth, isPacman, agentIndex, gameState):
+        if gameState.isLose() or gameState.isWin() or depth >= self.depth*2:
+            return self.evaluationFunction(gameState), Directions.STOP
+
+        # if it's Pacman, calculate the max value
+        # else calculate the min value
+        if isPacman:
+            return self.maxValue(depth, agentIndex, gameState)
+        else:
+            return self.minValue(depth, agentIndex, gameState)
+
+    def maxValue(self, depth, agentIndex, gameState):
+        legalMoves = gameState.getLegalActions(agentIndex)
+        scores = [self.minimax(depth+1, False, 1, gameState.generateSuccessor(agentIndex, action))[0] for action in legalMoves]
+        bestScore = max(scores)
+        bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
+
+        return bestScore, legalMoves[chosenIndex]
+
+    def minValue(self, depth, agentIndex, gameState):
+        legalMoves = gameState.getLegalActions(agentIndex)
+        ghostNum = gameState.getNumAgents()-1
+        # if all the ghosts are traversed, go to next depth and let pacman go
+        if agentIndex == ghostNum:
+            scores = [self.minimax(depth+1, True, 0, gameState.generateSuccessor(agentIndex, action))[0] for action in legalMoves]
+        # otherwise, traverse next ghost
+        else:
+            scores = [self.minimax(depth, False, agentIndex+1, gameState.generateSuccessor(agentIndex, action))[0] for action in legalMoves]
+
+        bestScore = min(scores)
+        bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
+
+        return bestScore, legalMoves[chosenIndex]
+
+
+class AlphaBetaAgent(MultiAgentSearchAgent):
+    """
+      Your minimax agent with alpha-beta pruning (question 3)
+    """
+
+    def getAction(self, gameState):
+        """
+          Returns the minimax action using self.depth and self.evaluationFunction
+        """
+        "*** YOUR CODE HERE ***"
+        return self.alphabeta(0, True, 0, gameState, -1000000, 1000000)[1]
+        util.raiseNotDefined()
+
+    def alphabeta(self, depth, isPacman, agentIndex, gameState, a, b):
+        if gameState.isLose() or gameState.isWin() or depth >= self.depth*2:
+            return self.evaluationFunction(gameState), Directions.STOP
+
+        if isPacman:
+            return self.maxValue(depth, agentIndex, gameState, a, b)
+        else:
+            return self.minValue(depth, agentIndex, gameState, a, b)
+
+
+    def maxValue(self, depth, agentIndex, gameState, a, b):
+        bestScore = -1000000
+        legalMoves = gameState.getLegalActions(agentIndex)
+        actionList = []
+
+        for action in legalMoves:
+            score = self.alphabeta(depth+1, False, 1, gameState.generateSuccessor(agentIndex, action), a, b)[0]
+            # if the score is higher, clear the actionList and put current action in
+            if score > bestScore:
+                bestScore = score
+                actionList = []
+                actionList.append(action)
+            # if the score is the same, just add the action to the list
+            elif score == bestScore:
+                actionList.append(action)
+            # if the bestscore surpass beta, return the bestscore and the action (random choice from actionList)
+            if bestScore > b:
+                return bestScore, random.choice(actionList)
+
+            a = max(a, bestScore)
+        return bestScore, random.choice(actionList)
+
+    def minValue(self, depth, agentIndex, gameState, a, b):
+        bestScore = 1000000
+        legalMoves = gameState.getLegalActions(agentIndex)
+        ghostNum = gameState.getNumAgents() - 1
+        actionList = []
+
+        # When all ghost are traversed
+        if agentIndex == ghostNum:
+            for action in legalMoves:
+                score = self.alphabeta(depth + 1, True, 0, gameState.generateSuccessor(agentIndex, action), a, b)[0]
+                if score < bestScore:
+                    bestScore = score
+                    actionList = []
+                    actionList.append(action)
+                elif score == bestScore:
+                    actionList.append(action)
+                if bestScore < a:
+                    return bestScore, random.choice(actionList)
+
+                b = min(b, bestScore)
+            return bestScore, random.choice(actionList)
+        # When there are ghost left.
+        else:
+            for action in legalMoves:
+                score = self.alphabeta(depth, False, agentIndex+1, gameState.generateSuccessor(agentIndex, action), a, b)[0]
+                if score < bestScore:
+                    bestScore = score
+                    actionList = []
+                    actionList.append(action)
+                elif score == bestScore:
+                    actionList.append(action)
+                if bestScore < a:
+                    return bestScore, random.choice(actionList)
+
+                b = min(b, bestScore)
+            return bestScore, random.choice(actionList)
+
+
+class ExpectimaxAgent(MultiAgentSearchAgent):
+    """
+      Your expectimax agent (question 4)
+    """
+
+    def getAction(self, gameState):
+        """
+          Returns the expectimax action using self.depth and self.evaluationFunction
+
+          All ghosts should be modeled as choosing uniformly at random from their
+          legal moves.
+        """
+        "*** YOUR CODE HERE ***"
+        return self.expectimax(0, True, 0, gameState)[1]
+
+        util.raiseNotDefined()
+
+    def expectimax(self, depth, isPacman, agentIndex, gameState):
+        if gameState.isLose() or gameState.isWin() or depth >= self.depth*2:
+            return self.evaluationFunction(gameState), Directions.STOP
+
+        if isPacman:
+            return self.maxValue(depth, agentIndex, gameState)
+        else:
+            return self.expValue(depth, agentIndex, gameState)
+
+    def maxValue(self, depth, agentIndex, gameState):
+        legalMoves = gameState.getLegalActions(agentIndex)
+        scores = [self.expectimax(depth + 1, False, 1, gameState.generateSuccessor(agentIndex, action))[0] for action in legalMoves]
+        bestScore = max(scores)
+        bestIndices = [index for index in range(len(scores)) if scores[index] == bestScore]
+        chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
+
+        return bestScore, legalMoves[chosenIndex]
+
+    def expValue(self, depth, agentIndex, gameState):
+        legalMoves = gameState.getLegalActions(agentIndex)
+        ghostNum = gameState.getNumAgents() - 1
+        if agentIndex == ghostNum:
+            scores = [self.expectimax(depth + 1, True, 0, gameState.generateSuccessor(agentIndex, action))[0] for action in legalMoves]
+
+        else:
+            scores = [self.expectimax(depth, False, agentIndex + 1, gameState.generateSuccessor(agentIndex, action))[0] for action in legalMoves]
+        # random pick numbers from 1 to 1000 and generate the weight.
+        randNum = [random.randint(1, 1000) for i in range(len(scores))]
+        randSum = sum(randNum)
+        weight = [randNum[i]*1.0/randSum*1.0 for i in range(len(scores))]
+        bestScore = 0
+        # calculate the bestcore
+        for i in range(len(scores)):
+            bestScore += weight[i]*scores[i]
+        # choose the action with the largest weight
+        bestIndices = [index for index in range(len(scores)) if weight[index] == max(weight)]
+        chosenIndex = random.choice(bestIndices)  # Pick randomly among the best
+
+        return bestScore, legalMoves[chosenIndex]
+
+def betterEvaluationFunction(currentGameState):
+    """
+      Your extreme ghost-hunting, pellet-nabbing, food-gobbling, unstoppable
+      evaluation function (question 5).
+
+      DESCRIPTION:
+      (1) I imported the mazeDistance from the previous project
+      (2) To calculate the nearest food, I use mazeDistance so that pacman can avoid walls
+      (3) To calculate the furthest ghost, I use manhattanDistance
+      (3) The final evaluation result is "score + 1/distanceToFood - 1/distanceToGhost
+
+    """
+    "*** YOUR CODE HERE ***"
+    import mypy
+    curPos = currentGameState.getPacmanPosition()
+    curFood = currentGameState.getFood()
+    ghostStates = currentGameState.getGhostStates()
+    scaredTimes = [ghostState.scaredTimer for ghostState in ghostStates]
+
+    minDistanceToFood = 100000
+
+    for food in curFood.asList():
+        minDistanceToFood = min(minDistanceToFood, mypy.mazeDistance(curPos, food, currentGameState))
+
+    maxDistanceToGhost = -100000
+    ghostPostions = currentGameState.getGhostPositions()
+
+    for ghost in ghostPostions:
+        if scaredTimes[0] != 0:
+            maxDistanceToGhost = -1
+        else:
+            maxDistanceToGhost = max(maxDistanceToGhost, manhattanDistance(curPos, ghost))
+
+    return currentGameState.getScore() + 1.0/minDistanceToFood*1.0 - 1.0/maxDistanceToGhost
+
+    util.raiseNotDefined()
+
+# Abbreviation
+better = betterEvaluationFunction
+
+class ContestAgent(MultiAgentSearchAgent):
+    """
+      Your agent for the mini-contest
+    """
+
+    def getAction(self, gameState):
+        """
+          Returns an action.  You can use any method you want and search to any depth you want.
+          Just remember that the mini-contest is timed, so you have to trade off speed and computation.
+
+          Ghosts don't behave randomly anymore, but they aren't perfect either -- they'll usually
+          just make a beeline straight towards Pacman (or away from him if they're scared!)
+        """
+        "*** YOUR CODE HERE ***"
+        util.raiseNotDefined()
+
+
